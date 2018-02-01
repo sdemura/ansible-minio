@@ -29,7 +29,7 @@
 
 - name: create minio config dir
   file:
-    path: /etc/minio
+    path: "{{ minio_config_dir }}"
     owner: "{{ minio_user }}"
     group: "{{ minio_group }}"
     state: directory
