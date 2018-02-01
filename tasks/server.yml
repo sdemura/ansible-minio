@@ -12,9 +12,9 @@
   blockinfile:
     path: /home/{{ minio_user }}/.minio/config.json
     create: yes
-    block: {{ minio_config|json }}
-    owner: {{ minio_user }}
-    group: {{ minio_user }}
+    block: "{{ minio_config|json }}"
+    owner: "{{ minio_user }}"
+    group: "{{ minio_user }}"
   when: minio_config is defined
 
 - name: generate the minio server envfile
