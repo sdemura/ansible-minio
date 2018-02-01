@@ -12,7 +12,7 @@
   blockinfile:
     path: /home/{{ minio_user }}/.minio/config.json
     create: yes
-    block: "{{ minio_config|json }}"
+    block: "{{ minio_config|to_json }}"
     owner: "{{ minio_user }}"
     group: "{{ minio_user }}"
   when: minio_config is defined
