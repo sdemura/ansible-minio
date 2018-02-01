@@ -27,3 +27,6 @@ minio_secret_key: ""
 # Switches to disable minio server and/or minio client installation
 skip_server: False
 skip_client: False
+
+# Minio server config. It is a YAML dictionary that will be parsed into JSON.
+# minio_config: []

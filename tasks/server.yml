@@ -8,6 +8,15 @@
     group: "{{ minio_group }}"
     mode: 0755
 
+- name: generate the minio server config.json
+  blockinfile:
+    path: /home/{{ minio_user }}/.minio/config.json
+    create: yes
+    block: {{ minio_config|json }}
+    owner: {{ minio_user }}
+    group: {{ minio_user }}
+  when: minio_config is defined
+
 - name: generate the minio server envfile
   template:
     src: minio.env.j2
